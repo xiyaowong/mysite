@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<title>wongxy</title>
+{% endblock head %}
+
+
+{% block content %}
+
+<div class="content" style="margin:20px">
+    {% for post in posts %}
+        <div class="columns is-mobile">
+            <div class="column">
+                <a href="{% url 'post:post_detail' post.id %}">
+                    <h4 title="{{ post.body|slice:'60' }}">
+                        {{ post.title }}
+                        <span class="has-text-grey-lighter is-size-7">&nbsp;&nbsp;{{ post.created|date:'Y-m-d' }}</span>
+                    </h4>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}

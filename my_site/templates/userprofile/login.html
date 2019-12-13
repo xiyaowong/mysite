@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>login</title>
+{% endblock head %}
+
+{% block content %}
+<form action="." method="POST">
+    {% csrf_token %}
+    <div class="field">
+        <label class="label">用户名</label>
+        <p class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" placeholder="username" name="username" required>
+        <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+        </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <label class="label">密码</label>
+        <p class="control has-icons-left">
+        <input class="input" type="password" placeholder="Password" name="password" required>
+        <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+        </span>
+        </p>
+    </div>
+
+    <div class="field">
+    <p class="control">
+        <button class="button is-success">
+        登录
+        </button>
+    </p>
+    </div>
+</form>
+{% endblock content %}
