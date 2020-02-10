@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+
+<title>{{ post.title }}</title>
+
+{% endblock head %}
+
+
+{% block content %}
+
+<div class="content" style='margin:20px'>
+<h1>{{ post.title }}</h1><sup class="has-text-grey-lighter">{{ post.created|date:'Y-m-d'}}&nbsp;<i class="fa fa-eye"></i>&nbsp;{{post.views}}
+{% if user.is_superuser %}
+<a href="{% url 'post:post_update' post.id %}">修改</a>
+{% endif %}
+</sup>
+<p>{{ post.body|safe }}</p>
+</div>
+
+
+
+
+{% endblock content %}

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*xktep(xcsr0h18e@&-9-t-+z4^87wt*lhwqcp*gshbd$i7ls^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['116.62.167.164','localhost','.wongxy.com']
 
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'post',
     'taggit',
     'userprofile',
-    'tool',
 ]
 
 MIDDLEWARE = [

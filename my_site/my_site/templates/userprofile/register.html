@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>register</title>
+{% endblock head %}
+
+{% block content %}
+
+<script>alert("我没有弄任何关于注册的验证，也没有用手机验证码，邮箱辅助注册等，默认您不会恶意注册，谢谢！")</script>
+
+<form action="." method="POST">
+    {% csrf_token %}
+    <div class="field">
+        <label class="label">用户名</label>
+        <p class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" placeholder="username" name="username" required>
+        <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+        </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <label class="label">邮箱</label>
+        <p class="control has-icons-left has-icons-right">
+        <input class="input" type="email" name="email" placeholder="Email:**@**修改密码的唯一途径(无法修改)，请正确填写" required>
+        <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+        </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <label class="label">密码</label>
+        <p class="control has-icons-left">
+        <input class="input" type="password" placeholder="Password" name="password" required>
+        <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+        </span>
+        </p>
+    </div>
+
+    <div class="field">
+        <label class="label">请再次输入密码</label>
+        <p class="control has-icons-left">
+        <input class="input" type="password" placeholder="Password" name="password2" required>
+        <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+        </span>
+        </p>
+    </div>
+
+    <div class="field">
+    <p class="control">
+        <button class="button is-success">
+        注册
+        </button>
+    </p>
+    </div>
+</form>
+{% endblock content %}
